@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Validation</title>
+  <link rel="stylesheet" href="form.css" />
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav">
+      <img width="300px" src="logo.png" alt="Logo">
+    </div>
+  </nav>
+
+  <h1 style="text-align: center; margin-bottom: 10px;">CHECKOUT FORM</h1>
+  <form onsubmit="return validateForm()" onreset="clearErrors()">
+    <div class="forms">
+
+      <div>
+        <label for="fullname"><b>Full Name</b></label>
+        <input id="fullname" type="text" required />
+        <p class="error" id="fullnameError"></p>
+      </div>
+
+      <div>
+        <label for="email"><b>Email</b></label>
+        <input id="email" type="email" required />
+        <p class="error" id="emailError"></p>
+      </div>
+
+      <div>
+        <label for="phone"><b>Phone Number</b></label>
+        <input id="phone" type="text" required minlength="11" maxlength="15" />
+        <p class="error" id="phoneError"></p>
+      </div>
+
+      <div>
+        <label for="address"><b>Address</b></label>
+        <input id="address" type="text" required />
+        <p class="error" id="addressError"></p>
+      </div>
+
+      <div>
+        <label for="ccn"><b>Credit Card Number</b></label>
+        <input id="ccn" type="text" required minlength="16" maxlength="16" />
+        <p class="error" id="ccnError"></p>
+      </div>
+
+      <div>
+        <label for="expirydate"><b>Expiry Date</b></label>
+        <input id="expirydate" type="date" required />
+        <p class="error" id="expirydateError"></p>
+      </div>
+
+      <div>
+        <label for="cvv"><b>CVV</b></label>
+        <input id="cvv" type="text" required minlength="3" maxlength="3" />
+        <p class="error" id="cvvError"></p>
+      </div>
+
+      <div class="button-row">
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+      </div>
+    </div>
+  </form>
+
+  <div class="info">
+    <p>Your info will be saved to a Shop account. By submitting, you agree to Shop’s Terms of Service and acknowledge
+      the Privacy Policy</p>
+  </div>
+  
+  <hr>
+  
+  <div class="info">
+    <a href="#">Refund Policy</a>
+    <a href="#">Shipping Policy</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+  </div>
+
+<div id="successModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Form Submitted Successfully!</h2>
+    <p>Your information has been saved. Thank you!</p>
+  </div>
+</div>
+
+
+  <script src="form.js"></script>
+</body>
+
+</html>
